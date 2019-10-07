@@ -36,13 +36,13 @@ const BottomRow = () => {
       </div>
     </div>
     <button className="homeButtons__touchdown" onClick={() => downSetCount(downCount + 1)}>Next Down</button>
-    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount + 1)}>Add 1</button>
-    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 1)}>Add 1</button>
-    <button className="homeButtons__touchdown" onClick={() => quarterSetCount(quarterCount + 1)}>Next Quarter</button>
-    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount = 10)}>Reset To Go</button>
-    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount - 1)}>Subtract 1</button>
-    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 5)}>Add 5</button>
+    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount + 1)}>Add 1 ToGo</button>
+    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount - 1)}>Subtract 1 ToGo</button>
+    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 1)}>Add 1 BallOn</button>
+    {/* <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount = 10)}>Reset To Go</button> */}
+    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 5)}>Add 5 BallOn</button>
     <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount = 1)}>Reset Ball On</button>
+    <button className="homeButtons__touchdown" onClick={() => quarterSetCount(quarterCount + 1)}>Next Quarter</button>
     </>
   );
 };
