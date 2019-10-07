@@ -2,10 +2,19 @@ import React, {useState} from "react";
 import "./App.css";
 
 const BottomRow = () => {
-  const [quarterCount, quarterSetCount] = useState(0);
-  const [downCount, downSetCount] = useState(0);
-  const [togoCount, togoSetCount] = useState(0);
-  const [ballOnCount, ballOnSetCount] = useState(0);
+  let [quarterCount, quarterSetCount] = useState(1);
+  let [downCount, downSetCount] = useState(1);
+  let [togoCount, togoSetCount] = useState(10);
+  let [ballOnCount, ballOnSetCount] = useState(1);
+  if (quarterCount > 4){
+    quarterCount = 1;
+  }
+  if (downCount > 4){
+    downCount = 1;
+  }
+  if (ballOnCount > 50){
+    ballOnCount = 1;
+  }
   return (
     <>
     <div className="bottomRow">
@@ -27,9 +36,13 @@ const BottomRow = () => {
       </div>
     </div>
     <button className="homeButtons__touchdown" onClick={() => downSetCount(downCount + 1)}>Next Down</button>
-    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount + 1)}>Add 1   </button>
-    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 1)}>Add 1   </button>
+    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount + 1)}>Add 1</button>
+    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 1)}>Add 1</button>
     <button className="homeButtons__touchdown" onClick={() => quarterSetCount(quarterCount + 1)}>Next Quarter</button>
+    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount = 10)}>Reset To Go</button>
+    <button className="homeButtons__touchdown" onClick={() => togoSetCount(togoCount - 1)}>Subtract 1</button>
+    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount + 5)}>Add 5</button>
+    <button className="homeButtons__touchdown" onClick={() => ballOnSetCount(ballOnCount = 1)}>Reset Ball On</button>
     </>
   );
 };
